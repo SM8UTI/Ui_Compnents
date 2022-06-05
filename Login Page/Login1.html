@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in 1</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center h-screen  bg-gradient-to-r to-gray-400 from-gray-200">
+    <!-- login card  -->
+    <div class="w-full sm:w-3/5 text-white font-kdram p-4 flex-row flex space-x-8">
+
+        <!-- login form side  -->
+        <div class="bg-[#E3D9E8] bg-opacity-40 p-4 text-black rounded-2xl shadow-2xl">
+            <div class="flex items-start justify-center sm:justify-between text-[#262528] font-bold flex-row ">
+                <h1 class="text-3xl sm:text-2xl">NMIETBOOK</h1>
+                <p class="flex text-right w-full text-[#4f85e2] font-light font-source flex-col justify-between">No Account?<a href="#" class="underline cursor-pointer">Sign up</a></p>
+            </div>
+            <h1 class="text-6xl mt-2 text-[#262528] font-extrabold font-source" >Sign in</h1>
+
+            <!-- sign with google  -->
+            <button class="font-source flex justify-center items-center flex-row bg-[#4f85e2]  text-white my-8 py-2 rounded-xl w-full hover:bg-blue-700">
+                <img src="Images/google-svgrepo-com.svg" alt="" class="w-6 mr-2">
+                <span>Sign in with Google </span>
+            </button>
+            <!-- --------------------------- -->
+
+            <form action="Login" class="font-source text-neutral-600">
+                <div>
+                    <label for="UserOrEmail">Username or Email Address</label>
+                    <input class="w-full rounded-lg px-3 py-2 my-2" type="user" placeholder="John@gmail.com">
+                </div>
+                <div>
+                    <div class="flex flex-row justify-between items-center">
+                        <label for="password">Password</label>
+                        <a href="#" class="text-[#4f85e2]  underline cursor-pointer">Forget Password</a>
+                    </div>
+                    <input class="w-full rounded-lg px-3 py-2 my-2" type="password" name="pass" id="" placeholder="*******">
+                </div>
+                <button class="bg-[#262528] text-white px-10 py-2 rounded-lg mt-6 font-bold text-xl hover:bg-neutral-700" type="submit">Sign in</button>
+            </form>
+
+        </div>
+
+        <!-- svg Images side  -->
+        <div class="w-1/2 hidden md:flex">
+            <img src="Images/login1.svg" alt="">
+        </div>
+    </div>
+</body>
+</html>
