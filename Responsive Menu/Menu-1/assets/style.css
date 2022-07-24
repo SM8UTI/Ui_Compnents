@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+:root {
+  --blue:hsl(172, 99%, 35%);
+  --black:hsl(0, 0%, 13%);
+  --gray:hsl(0, 0%, 7%);
+  --white:hsl(0, 0%, 100%);
+  --right:"Righteous",cursive;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--gray);
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: var(--black);
+  padding: 0.5rem 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  -moz-column-gap: 0.8rem;
+       column-gap: 0.8rem;
+  color: var(--blue);
+  font-family: var(--right);
+  font-size: 1.5rem;
+}
+header .navbar .navbar-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+header .navbar .navbar-list li a {
+  font-size: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--white);
+  font-weight: 800;
+  transition: all 250ms ease-in;
+  letter-spacing: 1px;
+}
+header .navbar .navbar-list li a:hover, header .navbar .navbar-list li a:focus {
+  color: var(--blue);
+}
+header .hammburger {
+  display: none;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: var(--blue);
+  outline: none;
+  border: none;
+  color: var(--white);
+  border-radius: 20px;
+  transition: all 350ms ease;
+}
+.btn:hover {
+  transform: scale(1.1);
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 0.5rem 2rem;
+    position: relative;
+  }
+}
+@media (max-width: 660px) {
+  header {
+    position: relative;
+  }
+  header .navbar .navbar-list {
+    z-index: 1000;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100vh;
+    background-color: var(--black);
+    transition: all 550ms ease-in-out;
+    box-shadow: rgba(55, 195, 255, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+  header .navbar .navbar-list li a {
+    font-size: 3rem;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+  header .navbar .navbar-list.active {
+    right: 0;
+  }
+  header .hammburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.5rem;
+    width: 40px;
+    aspect-ratio: 1/1;
+    background-color: var(--blue);
+    z-index: 9999;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+  }
+  header .hammburger .line {
+    display: block;
+    width: 90%;
+    height: 4px;
+    background-color: var(--white);
+    border-radius: 50px;
+    transition: transform 350ms ease;
+  }
+  header .hammburger.active .line {
+    position: absolute;
+  }
+  header .hammburger.active .line1 {
+    transform: rotate(405deg);
+  }
+  header .hammburger.active .line2 {
+    display: none;
+  }
+  header .hammburger.active .line3 {
+    transform: rotate(-405deg);
+  }
+}/*# sourceMappingURL=style.css.map */
