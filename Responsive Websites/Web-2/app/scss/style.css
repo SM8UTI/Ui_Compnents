@@ -3,7 +3,7 @@
   --bg-color:hsl(230, 18%, 25%);
   --bg-primary:hsl(39, 88%, 56%);
   --bg-neutral:hsl(0, 0%, 100%);
-  --bg-dark:hsl(0, 0%, 13%);
+  --bg-dark:hsla(0, 0%, 13%, 0.295);
   --hv-primary:hsl(33, 89%, 52%);
   --ff-primary:"Red Rose",cursive;
   --ff-secondary:"Dela Gothic One",cursive;
@@ -41,6 +41,9 @@ a, a:visited, a:active {
 }
 .primary-navigation .logo img {
   width: 120px;
+}
+.primary-navigation .hammburger {
+  display: none;
 }
 .primary-navigation .navbar ul {
   display: flex;
@@ -140,18 +143,11 @@ a, a:visited, a:active {
   max-height: 100vh;
   overflow: hidden;
   z-index: -1;
-}
-.banner .image {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: -2;
-}
-.banner .image img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  opacity: 20%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgb(0, 0, 0)), url(https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-dark);
 }
 .banner_text {
   display: flex;
@@ -160,14 +156,16 @@ a, a:visited, a:active {
   flex-direction: column;
   row-gap: 2rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   text-align: center;
   line-height: 1.6;
+  padding: 0rem 6rem;
+  transition: all 350ms ease-in-out;
 }
 .banner_text h1 {
   font-family: var(--ff-secondary);
   color: var(--bg-neutral);
-  font-size: 5rem;
+  font-size: 4rem;
   letter-spacing: 1px;
 }
 .banner_text p {
@@ -175,4 +173,79 @@ a, a:visited, a:active {
   color: var(--bg-neutral);
   font-size: 1.5rem;
   padding: 0rem 10rem;
+}
+
+@media (max-width: 1000px) {
+  .primary-navigation {
+    padding: 2rem 3rem;
+  }
+}
+@media (max-width: 800px) {
+  .banner_text h1 {
+    font-size: 3rem;
+  }
+  .banner_text p {
+    padding: 0rem 3re;
+  }
+  .primary-navigation .navbar {
+    display: none;
+  }
+  .primary-navigation button {
+    display: none;
+  }
+  .primary-navigation .hammburger {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .primary-navigation .hammburger .menu {
+    cursor: pointer;
+    background-color: var(--bg-primary);
+    padding: 0.8rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .primary-navigation .hammburger .menu .linex {
+    border-radius: 50px;
+    width: 100%;
+    height: 0.4rem;
+    background-color: var(--bg-neutral);
+  }
+  .primary-navigation .hammburger .menu .l1 {
+    margin-top: 0;
+  }
+  .primary-navigation .hammburger .order {
+    cursor: pointer;
+    background-color: var(--bg-primary);
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  .primary-navigation .hammburger .order svg {
+    width: 36px;
+    color: var(--bg-neutral);
+  }
+}
+@media (max-width: 600px) {
+  .banner_text {
+    line-height: 1.4;
+    max-width: 100%;
+    padding: 0rem 1rem;
+  }
+  .banner_text h1 {
+    padding: 0;
+    line-height: 1.4;
+    font-size: 2.8rem;
+  }
+  .banner_text p {
+    width: 100%;
+    padding: 0rem;
+  }
 }/*# sourceMappingURL=style.css.map */
