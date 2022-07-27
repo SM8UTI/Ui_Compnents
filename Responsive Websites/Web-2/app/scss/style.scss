@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Orbitron:wght@400;600;800&family=Red+Rose:wght@400;600;700&display=swap');
+
+
+:root{
+    --bg-color:hsl(230, 18%, 25%);
+    --bg-primary:hsl(39, 88%, 56%);
+    --bg-neutral:hsl(0, 0%, 100%);
+    --bg-dark:hsl(0, 0%, 13%);
+    --hv-primary:hsl(33, 89%, 52%);
+
+    --ff-primary:'Red Rose',cursive;
+    --ff-secondary:'Dela Gothic One',cursive;
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+li{
+    list-style: none;
+}
+
+a,a:visited,a:active{
+    text-decoration: none;
+}
+
+
+// header 
+
+.primary-navigation{
+    padding: 2rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    z-index: 999;
+
+    .logo{
+        img{
+            width: 120px;
+        }
+    }
+
+    .navbar{
+        ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            gap: 2rem;
+            li{
+                a{
+                    font-size: 1.8rem;
+                    padding: 0.5rem;
+                    font-family: var(--ff-primary);
+                    font-weight: 600;
+                    color: var(--bg-neutral);
+                    border: 3px solid transparent;
+                    transition: all 350ms ease-in-out;
+
+                    &:hover{
+                        border-bottom: 3px solid var(--hv-primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    position: relative;
+    font-family: var(--ff-primary);
+    font-size: 2rem;
+    font-weight: 700;
+    background-color: var(--bg-primary);
+    color: var(--bg-neutral);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+
+    svg{
+        width: 30px;
+        transition: all 1000ms ease-in-out;
+        
+    }
+    
+    
+    span{
+        transition: all 500ms ease-in-out;
+        z-index: 11;
+    }
+
+    &:hover{
+        svg{
+            transform: translateX(150px);
+        }
+
+        span{
+            transform: translateX(15px);
+        }
+    }
+}
+
+.menu-btn{
+    transition: all 350ms ease-in-out;
+    &:hover{
+        transform: scale(1.1);
+        background-color: var(--hv-primary);
+    }
+}
+
+.line{
+    background-color: var(--bg-primary);
+    width: 100px;
+    height: 0.5rem;
+    position: relative;
+    transform: rotate(270deg);
+    opacity: 60%;
+    margin-top: 8rem;
+
+
+    h2{
+        margin-top: 4px;
+        color: var(--bg-neutral);
+        font-family: var(--ff-primary);
+        letter-spacing: 4px;
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: -7px;
+        left: -12px;
+        width: 20px;
+        aspect-ratio: 1/1;
+        border-radius: 50px;
+        background-color: var(--bg-primary);
+    }
+    
+}
+
+.banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+
+    .image{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -2;
+
+        img{
+            width: 100%;
+            object-fit: cover;
+            opacity: 20%;
+        }
+    }
+
+    &_text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 2rem;
+        width: 100%;
+        max-width: 900px;
+        text-align: center;
+        line-height: 1.6;
+        h1{
+            font-family: var(--ff-secondary);
+            color: var(--bg-neutral);
+            font-size: 5rem;
+            letter-spacing: 1px;
+        }
+
+        p{
+            font-family: var(--ff-primary);
+            color: var(--bg-neutral);
+            font-size: 1.5rem;
+            padding: 0rem 10rem;
+        }
+    }
+}
