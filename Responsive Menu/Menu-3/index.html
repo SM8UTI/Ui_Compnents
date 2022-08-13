@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=ct ">
+    <title>Project 2 | GreeenFoods </title>
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+    <header class="Primary-navigation">
+        <h1 class="logo">
+            Green<span>Food</span>
+        </h1>
+        <div class="navigation">
+            <ul>
+                <li><a class="active" href="#" onclick="tg()">Home</a></li>
+                <li><a href="#" onclick="tg()">Menu</a></li>
+                <li><a href="#" onclick="tg()">About</a></li>
+                <li><a href="#" onclick="tg()">Contact</a></li>`
+            </ul>
+        </div>
+        <div class="menu-ham" onclick="tg()">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+        </div>
+    </header>
+    <script>
+        
+        function tg(){
+            const menu = document.querySelector('.menu-ham');
+            const nav = document.querySelector('.navigation');
+            menu.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

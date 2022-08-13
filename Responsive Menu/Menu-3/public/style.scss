@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Poppins:wght@400;500;600;700&family=Teko:wght@700&display=swap');
+
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+a,a::visited{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.Primary-navigation{
+    padding: 1rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 1rem;
+
+    .logo{
+        font-weight: 900;
+        font-size: 2.5rem;
+        color: #262626;
+        letter-spacing: 2px;
+        font-family: 'Teko', sans-serif;
+        span{
+            color:rgba(33, 196, 82,0.649) ;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+    }
+    .navigation{
+        ul{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 2rem;
+            li{
+                a{
+                    font-size: 1.6rem;
+                    text-decoration: none;
+                    font-weight: 900;
+                    color: #262626;
+                    position: relative;
+                    padding: 0.5rem;
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        width: 0%;
+                        height: 100%;
+                        background-color: rgba(33, 196, 82, 0.349);
+                        z-index: -1;
+                        border-radius: 3px 0 0 3px ;
+                        transition: all 500ms ease-in-out;
+                        
+                    }
+                    &:focus{
+                        outline: 2px solid rgba(33, 196, 82,0.649);
+                        border-radius: 3px;
+                    }
+                    &:hover,&:focus{
+                        &::before{
+                            opacity: 1;
+                            width: 100%;
+                            border-radius: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .menu-ham{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-direction: column;
+        width: 50px;
+        aspect-ratio: 1/1;
+        // background-color: rgba(33, 196, 82, 0.349);
+        background-color: transparent;
+        border-radius: 3px;
+        padding: 1rem;
+        cursor: pointer;
+        position: relative;
+
+        .line{
+            width: 100%;
+            height: 0.5rem;
+            background-color: #262626;
+            border-radius: 4px;
+            transform-origin: 8px 3px;
+        }
+    }
+}
+
+@media (max-width:768px){
+    .Primary-navigation{
+        padding: 1rem 2rem;
+        .navigation{
+            background-color: rgb(68, 241, 169);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0vh;
+            overflow: hidden;
+            transition: all 1000ms ease-in-out;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            ul{
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+
+                li{
+                    a{
+                        font-size: 2rem;
+                        color: #262626;
+                    }
+                }
+            }
+
+        }
+
+        .navigation.active{
+            height: 40vh;
+        }
+
+
+        .menu-ham{
+            display: flex;
+        }
+        .menu-ham.active{
+            display: flex;
+            .line{
+                transition: all 800ms ease-in-out;
+
+                &-1{
+                    transform: rotate(45deg);
+                }
+
+                &-2{
+                    display: none;
+                }
+
+                &-3{
+                    transform: rotate(-45deg);
+                }
+            }
+
+        }
+    }
+}
