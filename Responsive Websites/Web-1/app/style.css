@@ -203,7 +203,7 @@ header .search input {
 }
 .banner_headline .social_media {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   text-align: center;
 }
 .banner_headline .social_media h2 {
