@@ -28,12 +28,3 @@ And components
 
 
 
-
-
-
-
-
-
-
-
-
