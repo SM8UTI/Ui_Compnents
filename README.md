@@ -1,7 +1,7 @@
 
 # Ui_Compnents
 
-In this repo I posted my all Html and CSS ( SCSS &amp; Tailwind) Code 
+In this repo, I posted my all HTML and CSS ( SCSS &amp; Tailwind) Code 
 And components 
 
 
